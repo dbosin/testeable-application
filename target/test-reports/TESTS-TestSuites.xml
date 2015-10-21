@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="mac-dbosin.local" id="0" name="SimpleControllerTests" package="com.acme.app" tests="1" time="3.12" timestamp="2015-10-14T21:03:09">
+  <testsuite errors="0" failures="0" hostname="ararraquino.ml.com" id="0" name="SimpleControllerTests" package="com.acme.app" tests="1" time="2.424" timestamp="2015-10-19T21:35:35">
       <properties />
 
-      <testcase classname="com.acme.app.SimpleControllerTests" name="testHello" time="3.049" />
+      <testcase classname="com.acme.app.SimpleControllerTests" name="testHello" time="2.352" />
 
       <system-out><![CDATA[--Output from testHello--
 ]]></system-out>

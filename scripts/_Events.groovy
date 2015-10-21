@@ -33,10 +33,9 @@ eventCreateWarStart = { warName, stagingDir ->
 }
 
 //eventTestPhasesStart = {
-eventCompileStart = {   
-//eventAppLoadStart = {
-
-    //if (isCoverageEnabled()) {
+//eventCompileStart = {
+eventCompileEnd = {
+    if (isCoverageEnabled()) {
         event("StatusUpdate", ["Instrumenting classes for coverage"])
 
         if (isAppendCoverageResultsEnabled() && new File("${dataFile}").exists()) {
@@ -55,12 +54,14 @@ eventCompileStart = {
 
         defineCoberturaPathAndTasks()
         instrumentClasses()
-    //}
+
+        //activateReportPhase()
+    }
 }
 
-//eventTestPhasesEnd = {
-eventCompileEnd = {
-//eventAppLoadEnd = {   
+eventTestPhasesEnd = {
+//eventCompileStart = {
+//def activateReportPhase(){
     if (isCoverageEnabled()) {
         defineCoberturaPathAndTasks()
         flushReportData()
@@ -68,7 +69,7 @@ eventCompileEnd = {
         replaceClosureNamesInReports()
 
         //clear out the instrumented classes
-        cleanCompiledSources()
+        //cleanCompiledSources()
 
         event("StatusFinal", ["Cobertura Code Coverage Complete (view reports in: ${coverageReportDir})"])
     }
@@ -172,6 +173,7 @@ def replaceClosureNamesInXmlReports(artefacts) {
 
 def instrumentClasses() {
     String coverageClasspath = createCoverageClasspath()
+    System.out.println("DEBUG-DIEGO coverageClasspath:" + coverageClasspath)
 
     String antBuildfileContent = new AntInstrumentationBuildfileBuilder()
             .setDataFile(dataFile)

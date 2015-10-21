@@ -1,5 +1,5 @@
 Testsuite: com.acme.app.SimpleControllerTests
-Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 3.12 sec
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 2.424 sec
 ------------- Standard Output ---------------
 --Output from testHello--
 ------------- ---------------- ---------------
@@ -7,4 +7,4 @@ Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 3.12 sec
 --Output from testHello--
 ------------- ---------------- ---------------
 
-Testcase: testHello took 3.049 sec
+Testcase: testHello took 2.352 sec

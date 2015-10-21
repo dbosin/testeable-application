@@ -8,6 +8,7 @@ import groovy.util.AntBuilder;
 
 class BootStrap {
 
+
 	public saveDataFileThread(){
 		def reportThread = new Thread() {
 			public void run() {
@@ -33,6 +34,7 @@ class BootStrap {
 		
 		reportThread.start();
 	}
+
 
     def init = { servletContext ->
     	this.saveDataFileThread()
