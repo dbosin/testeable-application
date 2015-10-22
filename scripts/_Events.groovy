@@ -35,7 +35,7 @@ eventCreateWarStart = { warName, stagingDir ->
 //eventTestPhasesStart = {
 //eventCompileStart = {
 eventCompileEnd = {
-    if (isCoverageEnabled()) {
+    //if (isCoverageEnabled()) {
         event("StatusUpdate", ["Instrumenting classes for coverage"])
 
         if (isAppendCoverageResultsEnabled() && new File("${dataFile}").exists()) {
@@ -56,7 +56,7 @@ eventCompileEnd = {
         instrumentClasses()
 
         //activateReportPhase()
-    }
+    //}
 }
 
 eventTestPhasesEnd = {
