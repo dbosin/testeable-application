@@ -43,17 +43,6 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
 
-        // runtime 'mysql:mysql-connector-java:5.1.20'
-        runtime('org.apache.ant:ant-launcher:1.8.3')
-        runtime 'net.sourceforge.cobertura:cobertura:2.0.3', {
-        //runtime 'net.sourceforge.cobertura:cobertura:2.1.1', {
-            excludes 'ant', 'log4j'
-        }
-        //runtime 'xerces:xercesImpl:2.11.0'
-        runtime 'xalan:xalan:2.7.1'
-        runtime 'org.apache.ant:ant:1.8.4'
-
-
     }
 
     plugins {

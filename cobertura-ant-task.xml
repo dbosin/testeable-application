@@ -127,7 +127,7 @@
  
 
      <target name="generate.report" description="generate report">
-          <copy todir="${src.dir}"> 
+          <!--<copy todir="${src.dir}"> 
                <fileset dir="${basedir}/grails-app/controllers/"/>
                <fileset dir="${basedir}/grails-app/domain/"/>
                <fileset dir="${basedir}/grails-app/services/"/>
@@ -135,6 +135,18 @@
                <fileset dir="${basedir}/grails-app/utils/"/>
           </copy>
           <cobertura-report format="html" destdir="${cobertura.reports.dir}" datafile="${cobertura.datafile}" srcdir="${src.dir}" />
+          -->
+          <cobertura-report format="html" destdir="${cobertura.reports.dir}" datafile="${cobertura.datafile}" >
+              <fileset dir="${basedir}/grails-app/controllers/">
+                  <!--<include name="*" />-->
+                  <!--<exclude name="**/*Stub.java" />-->
+              </fileset>
+              <fileset dir="${basedir}/grails-app/domain/"></fileset>
+              <fileset dir="${basedir}/grails-app/services/"></fileset>
+              <fileset dir="${basedir}/grails-app/taglib/"></fileset>
+              <fileset dir="${basedir}/grails-app/utils/"></fileset>
+          </cobertura-report>
+
      </target>
 
 
